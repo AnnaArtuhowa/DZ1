@@ -1,0 +1,10 @@
+from pathlib import Path
+import csv
+
+def parser(p: Path) -> list[list[str]]:
+    result = []
+    with p.open(newline='', mode='r') as csvfile:
+        reader = csv.reader(csvfile)
+        for row in reader:
+            result.append(row)
+    return result
